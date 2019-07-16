@@ -33,30 +33,27 @@ end
 
 describe "The chiffrement_carac_upcase method" do
     it "should return the upcase letter cypted by the value of the key passed as parameter" do
-        expect(chiffrement_carac_lowcase("A",2)).to eq("c")
-        expect(chiffrement_carac_lowcase("Z",2)).to eq("a")
-        expect(chiffrement_carac_lowcase("Y",2)).to eq("b")
+        expect(chiffrement_carac_upcase("A",2)).to eq("C")
+        expect(chiffrement_carac_upcase("Z",2)).to eq("B")
+        expect(chiffrement_carac_upcase("Y",2)).to eq("A")
     end
 end
 
 
 
 describe "The chiffrement_carac_lowcase method" do
-
-
     it "should return the lowcase letter cypted by the value of the key passed as parameter" do
         expect(chiffrement_carac_lowcase("a",2)).to eq("c")
-        expect(chiffrement_carac_lowcase("z",2)).to eq("a")
-        expect(chiffrement_carac_lowcase("y",2)).to eq("b")
-        expect(chiffrement_carac_lowcase("Y",2)).to eq("B")
+        expect(chiffrement_carac_lowcase("z",2)).to eq("b")
+        expect(chiffrement_carac_lowcase("y",2)).to eq("a")
     end
 end
 
 describe "The caesar_cipher method" do
     it "should return the text passed as parameter, crypted by the key while respecting case" do
-        expect(caesar_cipher("abC - ABd",1)).to eq("bcD - BCd")
+        expect(caesar_cipher("abC - ABd",1)).to eq("bcD - BCe")
         expect(caesar_cipher("zyX /",3)).to eq("cbA /")
-        expect(caesar_cipher(64,8)).to eq(64)
+        expect(caesar_cipher("64",8)).to eq("64")
     end
 end
 
